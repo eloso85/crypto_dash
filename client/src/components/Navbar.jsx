@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 // import ListGroup from 'react-bootstrap/ListGroup'
 import Badge from 'react-bootstrap/Badge'
 import 'boxicons'
@@ -8,16 +8,21 @@ import Nav from 'react-bootstrap/Nav'
 import icon from '../images/cryptocurrency.png'
 
 const Navbar = () => {
+    const [isActive, setActive] = useState("false")
+
+    const handleToggle =()=>{
+        setActive(!isActive);
+    }
     return (
         <>
             <Nav >
-                <div className="sidebar">
+                <div className={isActive ? "sidebar" : "sidebar active"}>
                     <div className="logo_content">
                         <div className="logo">
-                        <box-icon color="white" type='logo' name='c-plus-plus' size="28px"></box-icon>
-                        <div className="logo_name">CryptoIsLife</div>
+                            <box-icon color="white" type='logo' name='c-plus-plus' size="28px"></box-icon>
+                            <div className="logo_name">CryptoIsLife</div>
                         </div>
-                        <box-icon color="white" name='menu' id="btn" ></box-icon>
+                        <box-icon color="white" name='menu' id="btn" onClick={handleToggle} ></box-icon>
                     </div>
                     <ul className="nav-list list-unstyled">
                         <li className="search">
@@ -71,31 +76,32 @@ const Navbar = () => {
                         <li>
                             <Link to="/">
                                 <box-icon color="white" name='heart' ></box-icon>
-                                <span class="links_name">Saved</span>
+                                <span className="links_name">Saved</span>
                             </Link>
-                            <span class="tooltip">Saved</span>
+                            <span className="tooltip">Saved</span>
                         </li>
                         <li>
                             <Link to="/">
                                 <box-icon color="white" name='cog' ></box-icon>
-                                <span class="links_name">Setting</span>
+                                <span className="links_name">Setting</span>
                             </Link>
-                            <span class="tooltip">Setting</span>
+                            <span className="tooltip">Setting</span>
                         </li>
-                        
+
                     </ul>
-                    <div class="profile_content">
-                            <div className="profile">
-                            <div class="profile_details">
-                                <img src={icon} alt="profileImg"/>
-                                <div class ="name_job">
-                                <div class ="name">Prem Shahi</div>
-                                <div class ="job">Web designer</div>
-                                </div>
+                    <div className="profile_content">
+                        <div className="profile">
+                            <div className="profile_details">
+                                <img src={icon} alt="profileImg" />
+                                <div className="name_job">
+                                    <div className="name">Prem Shahi</div>
+                                    <div className="job">Web designer</div>
                                 </div>
                             </div>
-                            <box-icon color="white" name='log-out' id="logout"></box-icon>
+                            <box-icon id="log_out" color="white" name='log-out' ></box-icon>
                         </div>
+                        
+                    </div>
                 </div>
             </Nav>
         </>
