@@ -1,7 +1,4 @@
 import React, {useState} from 'react'
-// import ListGroup from 'react-bootstrap/ListGroup'
-import Badge from 'react-bootstrap/Badge'
-import 'boxicons'
 import { Link } from 'react-router-dom';
 
 import Nav from 'react-bootstrap/Nav'
@@ -9,6 +6,21 @@ import icon from '../images/cryptocurrency.png'
 
 const Navbar = () => {
     const [isActive, setActive] = useState("false")
+    const [isColor, setColor] = useState([
+    "white",
+    "white",
+    "white",
+    "white",
+    "white",
+    "white"])
+
+    const colorChange = (index, value)=>{
+        const newColors = [...isColor]
+        newColors[index] = value;
+        setColor(newColors)
+    }
+    //console.log(isColor[0])
+    
 
     const handleToggle =()=>{
         setActive(!isActive);
@@ -22,7 +34,7 @@ const Navbar = () => {
                             <box-icon color="white" type='logo' name='c-plus-plus' size="28px"></box-icon>
                             <div className="logo_name">CryptoIsLife</div>
                         </div>
-                        <box-icon color="white" name='menu' id="btn" onClick={handleToggle} ></box-icon>
+                        <box-icon color="white"  name='menu' id="btn" onClick={handleToggle} ></box-icon>
                     </div>
                     <ul className="nav-list list-unstyled">
                         <li className="search">
@@ -32,22 +44,22 @@ const Navbar = () => {
                             <span className="tooltip">Search</span>
                         </li>
                         <li>
-                            <Link to="/">
-                                <box-icon color="white" name='grid-alt' animation="flashing-hover"></box-icon>
+                            <Link to="/" >
+                                <box-icon color={isColor[0]} onMouseEnter={()=>colorChange(0,"black")} onMouseLeave={()=>colorChange(0,"white")} name='grid-alt'></box-icon>
                                 <span className="links_name">Dashboard</span>
                             </Link>
                             <span className="tooltip">Dashboard</span>
                         </li>
-                        <li>
+                        <li >
                             <Link to="/">
-                                <box-icon color="white" name='user'></box-icon>
+                                <box-icon color={isColor[1]} onMouseEnter={()=>colorChange(1,"black")} onMouseLeave={()=>colorChange(1,"white")} name='user'></box-icon>
                                 <span className="links_name">User</span>
                             </Link>
                             <span className="tooltip">User</span>
                         </li>
                         <li>
                             <Link to="/">
-                                <box-icon color="white" name='chat'></box-icon>
+                                <box-icon color={isColor[2]} onMouseEnter={()=>colorChange(2,"black")} onMouseLeave={()=>colorChange(2,"white")} name='chat'></box-icon>
                                 <span className="links_name">Messages</span>
                             </Link>
                             <span className="tooltip">Messages</span>
