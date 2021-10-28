@@ -12,7 +12,12 @@ const Navbar = () => {
     "white",
     "white",
     "white",
-    "white"])
+    "white",
+    "white",
+    "white",
+    "white",
+    "white"
+])
 
     const colorChange = (index, value)=>{
         const newColors = [...isColor]
@@ -39,62 +44,62 @@ const Navbar = () => {
                     <ul className="nav-list list-unstyled">
                         <li className="search">
 
-                            <box-icon color="white" name='search' className="search"></box-icon>
+                            <box-icon color={isColor[0]} name='search' className="search" onClick={handleToggle} onMouseEnter={()=>colorChange(0,"black")} onMouseLeave={()=>colorChange(0,"white")}></box-icon>
                             <input type="text" placeholder="Search..." />
                             <span className="tooltip">Search</span>
                         </li>
                         <li>
                             <Link to="/" >
-                                <box-icon color={isColor[0]} onMouseEnter={()=>colorChange(0,"black")} onMouseLeave={()=>colorChange(0,"white")} name='grid-alt'></box-icon>
+                                <box-icon color={isColor[1]} onMouseEnter={()=>colorChange(1,"black")} onMouseLeave={()=>colorChange(1,"white")} name='grid-alt'></box-icon>
                                 <span className="links_name">Dashboard</span>
                             </Link>
                             <span className="tooltip">Dashboard</span>
                         </li>
                         <li >
                             <Link to="/">
-                                <box-icon color={isColor[1]} onMouseEnter={()=>colorChange(1,"black")} onMouseLeave={()=>colorChange(1,"white")} name='user'></box-icon>
+                                <box-icon color={isColor[2]} onMouseEnter={()=>colorChange(2,"black")} onMouseLeave={()=>colorChange(2,"white")} name='user'></box-icon>
                                 <span className="links_name">User</span>
                             </Link>
                             <span className="tooltip">User</span>
                         </li>
                         <li>
                             <Link to="/">
-                                <box-icon color={isColor[2]} onMouseEnter={()=>colorChange(2,"black")} onMouseLeave={()=>colorChange(2,"white")} name='chat'></box-icon>
+                                <box-icon color={isColor[3]} onMouseEnter={()=>colorChange(3,"black")} onMouseLeave={()=>colorChange(3,"white")} name='chat'></box-icon>
                                 <span className="links_name">Messages</span>
                             </Link>
                             <span className="tooltip">Messages</span>
                         </li>
                         <li>
-                            <Link to="/">
-                                <box-icon color="white" name='pie-chart-alt-2' ></box-icon>
-                                <span className="links_name">Analytics</span>
+                            <Link to="/cryptocurrencies">
+                                <box-icon color={isColor[4]} onMouseEnter={()=>colorChange(4,"black")} onMouseLeave={()=>colorChange(4,"white")} name='coin' ></box-icon>
+                                <span className="links_name">Currencies</span>
                             </Link>
-                            <span className="tooltip">Analytics</span>
+                            <span className="tooltip">Currencies</span>
+                        </li>
+                        <li>
+                            <Link to="/exchanges">
+                                <box-icon color={isColor[5]} onMouseEnter={()=>colorChange(5,"black")} onMouseLeave={()=>colorChange(5,"white")} name='line-chart' ></box-icon>
+                                <span className="links_name">Exchanges</span>
+                            </Link>
+                            <span className="tooltip">Exchanges</span>
+                        </li>
+                        <li>
+                            <Link to="/news">
+                                <box-icon color={isColor[7]} onMouseEnter={()=>colorChange(7,"black")} onMouseLeave={()=>colorChange(7,"white")} name='news' ></box-icon>
+                                <span className="links_name">News</span>
+                            </Link>
+                            <span className="tooltip">News</span>
                         </li>
                         <li>
                             <Link to="/">
-                                <box-icon color="white" name='folder' ></box-icon>
-                                <span className="links_name">File Manager</span>
-                            </Link>
-                            <span className="tooltip">Files</span>
-                        </li>
-                        <li>
-                            <Link to="/">
-                                <box-icon color="white" name='cart-alt' ></box-icon>
-                                <span className="links_name">Order</span>
-                            </Link>
-                            <span className="tooltip">Order</span>
-                        </li>
-                        <li>
-                            <Link to="/">
-                                <box-icon color="white" name='heart' ></box-icon>
+                                <box-icon color={isColor[8]} onMouseEnter={()=>colorChange(8,"black")} onMouseLeave={()=>colorChange(8,"white")} name='heart' ></box-icon>
                                 <span className="links_name">Saved</span>
                             </Link>
                             <span className="tooltip">Saved</span>
                         </li>
                         <li>
                             <Link to="/">
-                                <box-icon color="white" name='cog' ></box-icon>
+                                <box-icon color={isColor[9]} onMouseEnter={()=>colorChange(9,"black")} onMouseLeave={()=>colorChange(9,"white")} name='cog' ></box-icon>
                                 <span className="links_name">Setting</span>
                             </Link>
                             <span className="tooltip">Setting</span>
