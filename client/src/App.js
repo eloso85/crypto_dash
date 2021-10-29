@@ -12,7 +12,7 @@ const App = () => {
             <div className="navbar">
                 <Navbar />
             </div>
-            <div className="main">
+            <div className="main ">
                 <div className="routes">
                     <Switch>
                         <Route exact path="/">

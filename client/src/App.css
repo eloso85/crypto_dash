@@ -253,6 +253,23 @@ body{
 }
 
 /* .sidebar.active ~ .home_content */
+@media (max-width: 768px) {
+    .main {
+    padding-right: 40px;
+    padding-left: 82px; /* 180 + 40 */
+    }
+    }
+
+@media (min-width: 768px) {
+    .main {
+    padding-right: 40px;
+    padding-left: 220px; /* 180 + 40 */
+    }
+    }
+
+    Container{
+        background: #1d1b31;
+    }
 
 
 
